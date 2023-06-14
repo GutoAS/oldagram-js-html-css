@@ -1,5 +1,19 @@
-html, body {
-    margin: 0;
-    padding: 0;
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(./fonts/sourcesanspro/SourceSansPro-Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
 }
 
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(./fonts/sourcesanspro/SourceSansPro-Bold.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
