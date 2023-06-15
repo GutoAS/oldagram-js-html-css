@@ -31,7 +31,13 @@ const posts = [
 
 const postContainerEl = document.getElementById("postsContainerEl");
 
-const postELements = posts.map((post) => {
+function incrementLike(index) {
+  let likes = posts[index].likes++;
+  const likesCounterEl = document.getElementById("likesCounterEl" + index);
+  likesCounterEl.textContent = likes;
+}
+
+const postELements = posts.map((post, index) => {
   postContainerEl.innerHTML += `
   <section>
     <div class="container">
@@ -45,11 +51,11 @@ const postELements = posts.map((post) => {
       <div class="post-container">
         <img id="postImgEl" src="${post.post}" />
         <div class="post-icon-container">
-          <img id="likeIconEl" src="images/icon-heart.png" alt="" />
+          <img id="likeIconEl" onclick="incrementLike(${index})" src="images/icon-heart.png" alt="" />
           <img src="images/icon-comment.png" alt="" />
           <img src="images/icon-dm.png" alt="" />
         </div>
-        <p class="likes"><span id="likesCounterEl">${post.likes}</span> likes</p>
+        <p class="likes"><span id="likesCounterEl${index}">${post.likes}</span> likes</p>
         <p>
           <span class="username">${post.username}</span>
           <span id="userCommentEL"></span>${post.comment}
