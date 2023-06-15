@@ -16,4 +16,70 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #c6c6c6;
+}
+
+.logo {
+  width: 130px;
+  display: block;
+}
+
+.user-avatar {
+  width: 40px;
+  display: block;
+  border-radius: 50%;
+}
+
+.user-container {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+.post-container img {
+  width: 100%;
+}
+
+.post-container p,
+.post-icon-container {
+  padding: 0 10px 10px 10px;
+}
+
+.post-icon-container img {
+  width: 25px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.post-icon-container img:hover {
+  opacity: 0.5;
+}
+
+#likes {
+  font-weight: bold;
+}
+
+#usernameEl {
+  font-weight: bold;
 }
