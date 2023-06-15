@@ -29,14 +29,33 @@ const posts = [
   },
 ];
 
-const nameEL = document.getElementById("nameEL");
-const locationEl = document.getElementById("locationEL");
-const userAvatar = document.getElementById("userAvatarEl");
-const postImgEl = document.getElementById("postImgEL");
-const likeIconEl = document.getElementById("likeIconEl");
-const likesCounterEL = document.getElementById("likesCounterEl");
-const usernameEl = document.getElementById("usernameEl");
+const postContainerEl = document.getElementById("postsContainerEl");
 
-for (let i = 0; i < posts.length; i++) {
-  console.log(posts[i]);
-}
+const postELements = posts.map((post) => {
+  postContainerEl.innerHTML += `
+  <section>
+    <div class="container">
+      <div class="user-container">
+        <img class="user-avatar" src="${post.avatar}" />
+        <div>
+          <h3 >${post.name}</h3>
+          <p >${post.location}</p>
+        </div>
+      </div>
+      <div class="post-container">
+        <img id="postImgEl" src="${post.post}" />
+        <div class="post-icon-container">
+          <img id="likeIconEl" src="images/icon-heart.png" alt="" />
+          <img src="images/icon-comment.png" alt="" />
+          <img src="images/icon-dm.png" alt="" />
+        </div>
+        <p class="likes"><span id="likesCounterEl">${post.likes}</span> likes</p>
+        <p>
+          <span class="username">${post.username}</span>
+          <span id="userCommentEL"></span>${post.comment}
+        </p>
+      </div>
+    </div>
+  </section>
+  `;
+});
